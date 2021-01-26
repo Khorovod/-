@@ -1,6 +1,6 @@
 ﻿namespace Калькулятор
 {
-    partial class Form1
+    partial class Calculator
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -63,25 +63,26 @@
             this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(11, 207);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 57);
+            this.button1.Size = new System.Drawing.Size(48, 57);
             this.button1.TabIndex = 1;
             this.button1.Text = "7";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button1.Click += new System.EventHandler(this.FocusTextBox);
             // 
-            // textBox1
+            // textBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(11, 10);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 82);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumberic_KeyPress);
-            this.textBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseDoubleClick);
+            this.textBox.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox.Location = new System.Drawing.Point(11, 10);
+            this.textBox.Multiline = true;
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(234, 82);
+            this.textBox.TabIndex = 1;
+            this.textBox.Text = "0";
+            this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
+            this.textBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseDoubleClick);
+            this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FocusTextBox);
             // 
             // button2
             // 
@@ -94,6 +95,7 @@
             this.button2.Text = "8";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button2.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button3
             // 
@@ -106,6 +108,7 @@
             this.button3.Text = "9";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button3.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button5
             // 
@@ -118,6 +121,7 @@
             this.button5.Text = "4";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button5.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button6
             // 
@@ -130,6 +134,7 @@
             this.button6.Text = "5";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button6.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button7
             // 
@@ -142,6 +147,7 @@
             this.button7.Text = "6";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button7.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button9
             // 
@@ -154,6 +160,7 @@
             this.button9.Text = "1";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button9.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button10
             // 
@@ -166,6 +173,7 @@
             this.button10.Text = "2";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button10.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button11
             // 
@@ -178,6 +186,7 @@
             this.button11.Text = "3";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button11.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button12
             // 
@@ -190,6 +199,7 @@
             this.button12.Text = "0";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.DigitsButtonClick);
+            this.button12.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button14
             // 
@@ -202,6 +212,7 @@
             this.button14.Text = "=";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.EqualSignButton);
+            this.button14.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button4
             // 
@@ -214,6 +225,7 @@
             this.button4.Text = "+";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.MathButtonClick);
+            this.button4.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button8
             // 
@@ -226,10 +238,11 @@
             this.button8.Text = "-";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.MathButtonClick);
+            this.button8.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button13
             // 
-            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button13.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button13.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button13.Location = new System.Drawing.Point(190, 270);
             this.button13.Name = "button13";
@@ -238,6 +251,7 @@
             this.button13.Text = "*";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.MathButtonClick);
+            this.button13.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button15
             // 
@@ -250,6 +264,7 @@
             this.button15.Text = "/";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.MathButtonClick);
+            this.button15.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button18
             // 
@@ -262,6 +277,7 @@
             this.button18.Text = ",";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.CommaClick);
+            this.button18.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button16
             // 
@@ -274,6 +290,7 @@
             this.button16.Text = "%";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.PersentButtonClick);
+            this.button16.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button17
             // 
@@ -286,6 +303,7 @@
             this.button17.Text = "x² ";
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.PowerTwoButtontClick);
+            this.button17.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button19
             // 
@@ -298,6 +316,7 @@
             this.button19.Text = "√‎";
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.SquareButtonClick);
+            this.button19.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button20
             // 
@@ -310,6 +329,7 @@
             this.button20.Text = "-x";
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.MinusClick);
+            this.button20.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button21
             // 
@@ -322,6 +342,7 @@
             this.button21.Text = "C";
             this.button21.UseVisualStyleBackColor = true;
             this.button21.Click += new System.EventHandler(this.ClearButtonClick);
+            this.button21.Click += new System.EventHandler(this.FocusTextBox);
             // 
             // button22
             // 
@@ -334,13 +355,14 @@
             this.button22.Text = "<-";
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.DeleteLastDigitClick);
+            this.button22.Click += new System.EventHandler(this.FocusTextBox);
             // 
-            // Form1
+            // Calculator
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.DarkRed;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(262, 468);
+            this.ClientSize = new System.Drawing.Size(257, 468);
             this.Controls.Add(this.button22);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.button20);
@@ -362,7 +384,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.button1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -371,11 +393,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Calculator";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Калькулятор";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.Text = "Калькулятр";
+            this.Load += new System.EventHandler(this.Calculator_Load);
+            this.Load += new System.EventHandler(this.FocusTextBox);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,7 +407,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
